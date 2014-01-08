@@ -1,0 +1,46 @@
+Beispieltest Gruppe BEISPIELLOESUNG  
+
+Tests 1: Ressourcen hinzufuegen
+
+1.0 Erwarte Fahrschulauto_erfolgreich_hinzugefuegt
+1.0 Erhalte Fahrschulauto_erfolgreich_hinzugefuegt
+
+1.1 Erwarte Fahrlehrerin_erfolgreich_hinzugefuegt
+1.1 Erhalte Fahrlehrerin_erfolgreich_hinzugefuegt
+
+1.2 Erwarte Fahrlehrerin_nicht_hinzugefügt_Auto_vergeben
+1.2 Erhalte Fahrlehrerin_nicht_hinzugefügt_Auto_vergeben
+
+1.3 Erwarte Fahrlehrerin_nicht_hinzugefügt_Auto_vergeben
+1.3 Erhalte Fahrlehrerin_nicht_hinzugefügt_Auto_vergeben
+
+1.4 Erwarte Fahrschueler_erfolgreich_hinzugefuegt
+1.4 Erhalte Fahrschueler_erfolgreich_hinzugefuegt
+
+1.5 Erwarte Fahrstunde_erfolgreich_eingetragen
+	 Fahrstunde eintragen: 10/11/2013 13:00
+1.5 Erhalte Fahrstunde_erfolgreich_eingetragen
+
+1.6 Erwarte Datenbestand von ISekretaerBoundary
+Fahrschulautos: 
+ ==============
+Fahrschulauto B-DEF5689 mit Fahrlehrerin Alexandra
+Fahrschulauto B-ABC1234 ohne Fahrlehrerin
+Fahrschulauto B-GHJ1384 ohne Fahrlehrerin
+Fahrlehrerinnen: 
+ ==============
+Fahrlehrerin Alexandra [0] 
+ 	 Fahrstunden: Fahrstunde 10/11/2013 13:00 (Uebungsfahrt) 
+ 	 Theoriestunden: keine
+Fahrschueler: 
+ ==============
+Fahrschueler Daniel, Am Strand 1, 23456 Stadt [0] 
+	Lehrerin: Alexandra
+	Theoriestunden: keine
+	Fahrstunden: Fahrstunde 10/11/2013 13:00 (Uebungsfahrt)
+
+1.7 Erwarte Datenbestand von IFahrlehrerinBoundary
+Fahrlehrerin Alexandra [0] 
+ 	 Fahrstunden: Fahrstunde 10/11/2013 13:00 (Uebungsfahrt) 
+ 	 Theoriestunden: keine
+
