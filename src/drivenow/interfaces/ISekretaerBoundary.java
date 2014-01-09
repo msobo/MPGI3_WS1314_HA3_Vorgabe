@@ -1,8 +1,8 @@
-package src.drivenow.interfaces;
+package drivenow.interfaces;
 
 import java.util.Date;
 
-import src.drivenow.Systemereignis;
+import drivenow.Systemereignis;
 
 /**
  * Interface fuer die SekretaerBoundary.

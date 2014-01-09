@@ -12,6 +12,10 @@ public class Fahrlehrerindaten {
 		this.id = UUID.fromString(name);
 	}
 	
+	public Fahrlehrerindaten() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Fahrlehrerindaten create(String name, Auto auto){
 		Fahrlehrerindaten fd = new Fahrlehrerindaten(name);
 		return fd;

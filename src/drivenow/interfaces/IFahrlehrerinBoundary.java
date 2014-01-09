@@ -1,6 +1,6 @@
-package src.drivenow.interfaces;
+package drivenow.interfaces;
 
-import src.drivenow.Systemereignis;
+import drivenow.Systemereignis;
 
 /**
  * Interface fuer die FahrlehrerinBoundary.

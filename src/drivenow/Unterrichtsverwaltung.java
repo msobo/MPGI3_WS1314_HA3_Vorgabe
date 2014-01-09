@@ -1,13 +1,14 @@
-package src.drivenow;
+package drivenow;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class Unterrichtsverwaltung {
 	
-	private Collection<Fahrschueler> fahrschueler;
+	private ArrayList<Fahrschueler> fahrschueler;
 	private Theoriestunden_Collection theoriestunden;
-	private Collection<Fahrlehrerindaten> fahrlehrerindaten;
+	private ArrayList<Fahrlehrerindaten> fahrlehrerindaten;
 	
 	
 	//statt date Calendar oder so?
@@ -21,6 +22,6 @@ public class Unterrichtsverwaltung {
 	}
 	
 	private void add(Fahrlehrerindaten f_new){
-		
+		fahrlehrerindaten.add(f_new);
 	}
 }

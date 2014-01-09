@@ -1,12 +1,13 @@
-package src.drivenow;
+package drivenow;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-import src.drivenow.interfaces.ISekretaerBoundary;
+import drivenow.interfaces.ISekretaerBoundary;
 
 
-public class Ressourcenverwaltung implements ISekretaerBoundary {
+
+public class Ressourcenverwaltung {
 	
 	private ArrayList<Auto> autos = null;
 	private ArrayList<Fahrlehrerindaten> fahrlehrerindaten = null;
@@ -28,10 +29,8 @@ public class Ressourcenverwaltung implements ISekretaerBoundary {
 		
 	}
 
-	
-	
-	@Override
-	public Systemereignis fahrlehrerinEintragen(String name, String kennzeichen) {
+
+	private Systemereignis fahrlehrerin_hinzufuegen(String name, String kennzeichen) {
 		Auto auto = get_auto(kennzeichen);
 		if(auto == null){
 			return new Systemereignis(Systemereignis.Nachricht.Fahrlehrerin_nicht_hinzugefügt_Auto_unbekannt);
@@ -41,73 +40,14 @@ public class Ressourcenverwaltung implements ISekretaerBoundary {
 			return new Systemereignis(Systemereignis.Nachricht.Fahrlehrerin_nicht_hinzugefügt_Auto_vergeben);
 		}
 		Fahrlehrerindaten f_new = new Fahrlehrerindaten();
-		f_new.create(name,auto);
+		f_new = f_new.create(name,auto);
+		fahrlehrerindaten.add(f_new);
+		auto.set_fahrlehrerin(f_new);
 		
+		//zum testen
+		System.out.println("Fahrlehrerin "+ name + " und Auto mit Kennzeichen: "+kennzeichen+" hinzugefügt");
 		
 		return new Systemereignis(Systemereignis.Nachricht.Fahrlehrerin_erfolgreich_hinzugefuegt);
 
 	}
-
-	@Override
-	public Systemereignis fahrschuelerEintragen(String name, String anschrift) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Systemereignis fahrschulautoEintragen(String kennzeichen) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Systemereignis theoriestundeEintragen(int thema, Date beginn) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Systemereignis fahrstundeEintragen(String schuelerID,
-			Stundenart art, Date beginn, int anzahl) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Systemereignis theoriestundeVermerken(String schuelerID, Date beginn) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Systemereignis fahrstundeLoeschen(String schuelerID, Date beginn) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String datenbestandZurueckgeben() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Systemereignis theoriepruefungszulassungUeberpruefen(
-			String schuelerID) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Systemereignis theoriepruefungsbestehenEintragen(String schuelerID) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Systemereignis praxispruefungEintragen(String schuelerID, Date beginn) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
