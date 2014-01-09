@@ -25,16 +25,26 @@ public class Theoriestunden_Collection {
 		return false;
 	}
 	
-	private int get_anzahl_grundlagenstunden(){
-		return 0;
+	public int get_anzahl_grundlagenstunden(){
+		int anzahl=0;
+		for(int i = 0; i<theoriestunden.size(); i++){
+			if(theoriestunden.get(i).getThema()<13){
+				anzahl=anzahl+1;
+			}
+		}
+		return anzahl;
 		
 	}
 	
-	private void finde_stunde(int thema){
-		
-		
+	public boolean finde_stunde(int thema){
+		for(int i = 0; i<theoriestunden.size(); i++){
+			if(theoriestunden.get(i).getThema()==thema){
+				return true;
+			}
+		}
+		return false;
 	}
-	private void add(Theoriestunde ts){
-		
+	public void add(Theoriestunde ts){
+		theoriestunden.add(ts);
 	}
 }

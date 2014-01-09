@@ -21,17 +21,17 @@ public class Fahrschueler {
 		return false;
 	}
 	
-	private int get_anzahl_grundlagen(){
-		
-	
+	public int get_anzahl_grundlagen(){
+		return theoriestunden.get_anzahl_grundlagenstunden();
 	}
 	
-	private boolean sonderthema_besucht(int thema){
+	public boolean sonderthema_besucht(int thema){
+		return theoriestunden.finde_stunde(thema);
 		
 	}
 	
-	private void add_stunde(Theoriestunde ts){
-		
+	public void add_stunde(Theoriestunde ts){
+		theoriestunden.add(ts);
 	}
 	
 }

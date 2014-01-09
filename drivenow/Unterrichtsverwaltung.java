@@ -14,17 +14,38 @@ public class Unterrichtsverwaltung {
 	
 	public Systemereignis theoriestunde_vermerken(String schuelerID, Calendar beginn){
 		boolean bereits_besucht;
+		boolean sonderthema_vermerkt;
+		int anzahl_grundlagen;
+		int thema;
+		
+		
 		Fahrschueler fs = get_fahrschueler(schuelerID);
 		Theoriestunde ts = theoriestunden.get_theoriestunde(beginn);
 		bereits_besucht = fs.finde_stunde(ts);
 		if(bereits_besucht){
 			return new Systemereignis(Systemereignis.Nachricht.Theoriestunde_nicht_vermerkt_bereits_vermerkt);
 		}
-		
-		
-		
-		return new Systemereignis(Systemereignis.Nachricht.Theoriestunde_erfolgreich_vermerkt)
+		if(!bereits_besucht){
+			anzahl_grundlagen = fs.get_anzahl_grundlagen();
+			thema = ts.getThema();
+			
+			if(anzahl_grundlagen>=12 && thema<13 ){
+				return new Systemereignis(Systemereignis.Nachricht.Theoriestunde_nicht_vermerkt_bereits_genug_Grundlagen);
+			}
+			
+			if(thema>12){
+				sonderthema_vermerkt = fs.sonderthema_besucht(thema);
+				if(sonderthema_vermerkt){
+					return new Systemereignis(Systemereignis.Nachricht.Theoriestunde_nicht_vermerkt_bereits_Sonderthema);
+				}
+			}
+			
+			fs.add_stunde(ts);
+			
+		}
+		return new Systemereignis(Systemereignis.Nachricht.Theoriestunde_erfolgreich_vermerkt);
 	}
+
 
 	private Fahrschueler get_fahrschueler(String schuelerID){
 		for(int i = 0; i<fahrschueler.size();i++){
