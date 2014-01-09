@@ -1,4 +1,4 @@
-package src.drivenow;
+package drivenow;
 
 import java.util.UUID;
 

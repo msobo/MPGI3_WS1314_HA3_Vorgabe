@@ -1,22 +1,19 @@
-package src.drivenow;
+package drivenow;
 
-import java.sql.Date;
+
+import java.util.Calendar;
 
 public class Theoriestunde extends Unterricht{
 	
 	private int thema;
-	private Date beginn;
+	private Calendar beginn;
 	
 	public int getThema() {
 		return thema;
 	}
 	
-	public Date getBeginn() {
-		return beginn;
+	public Calendar getBeginn() {
+		return this.beginn;
 	}
-
-	
-
-	
 
 }

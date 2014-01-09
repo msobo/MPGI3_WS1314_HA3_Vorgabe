@@ -1,4 +1,4 @@
-package src.drivenow;
+package drivenow;
 
 import java.util.UUID;
 
@@ -14,7 +14,10 @@ public class Fahrschueler {
 		return this.id;
 	}
 	
-	private boolean finde_stunde(Theoriestunde ts){
+	public boolean finde_stunde(Theoriestunde ts){
+		if(theoriestunden.contains(ts)){
+			return true;
+		}
 		return false;
 	}
 	

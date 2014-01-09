@@ -1,7 +1,8 @@
 package drivenow;
 
-import java.sql.Date;
+
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collection;
 
 public class Unterrichtsverwaltung {
@@ -11,11 +12,18 @@ public class Unterrichtsverwaltung {
 	private ArrayList<Fahrlehrerindaten> fahrlehrerindaten;
 	
 	
-	//statt date Calendar oder so?
-	public void theoriestunde_vermerken(String schuelerID, Date beginn){
+	public Systemereignis theoriestunde_vermerken(String schuelerID, Calendar beginn){
+		boolean bereits_besucht;
 		Fahrschueler fs = get_fahrschueler(schuelerID);
 		Theoriestunde ts = theoriestunden.get_theoriestunde(beginn);
+		bereits_besucht = fs.finde_stunde(ts);
+		if(bereits_besucht){
+			return new Systemereignis(Systemereignis.Nachricht.Theoriestunde_nicht_vermerkt_bereits_vermerkt);
+		}
 		
+		
+		
+		return new Systemereignis(Systemereignis.Nachricht.Theoriestunde_erfolgreich_vermerkt)
 	}
 
 	private Fahrschueler get_fahrschueler(String schuelerID){
