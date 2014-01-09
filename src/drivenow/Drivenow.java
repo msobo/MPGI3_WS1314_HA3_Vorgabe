@@ -21,14 +21,12 @@ public class Drivenow implements IDrivenow{
 	@Override
 	public ISekretaerBoundary getSekretaerBoundary() {
 		
-		return null;
+		return b;
 	}
 
 	@Override
 	public void initialisieren() {
-		Ressourcenverwaltung res = new Ressourcenverwaltung();
-		Unterrichtsverwaltung uv = new Unterrichtsverwaltung();
-		this.
+		SekretaerBoundary b = new SekretaerBoundary();
 		
 	}
 

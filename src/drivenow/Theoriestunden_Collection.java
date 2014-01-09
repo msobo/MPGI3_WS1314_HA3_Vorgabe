@@ -1,13 +1,18 @@
-package src.drivenow;
+package drivenow;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class Theoriestunden_Collection {
 
 	
-	private Collection<Theoriestunde> theoriestunden;
+	private ArrayList<Theoriestunde> theoriestunden;
 	
 	public Theoriestunde get_theoriestunde(Date beginn){
+		for(int i = 0; i<theoriestunden.size();i++){
+			if(theoriestunden.get(i).getBeginn() ==beginn)
+				return theoriestunden.get(i);
+		}
 		return null;
 	}
 	

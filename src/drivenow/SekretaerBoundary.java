@@ -9,7 +9,7 @@ public class SekretaerBoundary implements ISekretaerBoundary {
 	@Override
 	public Systemereignis fahrlehrerinEintragen(String name, String kennzeichen) {
 		
-
+		
 		return null;
 	}
 
