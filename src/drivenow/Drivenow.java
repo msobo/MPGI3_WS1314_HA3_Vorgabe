@@ -7,6 +7,7 @@ import drivenow.interfaces.ISekretaerBoundary;
 public class Drivenow implements IDrivenow{
 	
 	SekretaerBoundary sekBoundary = null;
+	FahrlehrerinBoundary fahrBoundary = null;
 
 	@Override
 	public String getGruppenNummer() {
@@ -16,8 +17,7 @@ public class Drivenow implements IDrivenow{
 
 	@Override
 	public IFahrlehrerinBoundary getFahrlehrerinBoundary() {
-		// TODO Auto-generated method stub
-		return null;
+		return fahrBoundary;
 	}
 
 	@Override
@@ -27,6 +27,7 @@ public class Drivenow implements IDrivenow{
 
 	@Override
 	public void initialisieren() {
+		fahrBoundary = new FahrlehrerinBoundary();
 		sekBoundary = new SekretaerBoundary();
 	}
 

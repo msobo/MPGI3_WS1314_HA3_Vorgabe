@@ -1,5 +1,7 @@
 package drivenow;
 
+import java.util.UUID;
+
 
 /**
  * Klasse fuer die Systemereignisse.
@@ -31,6 +33,11 @@ public class Systemereignis {
 
 	public Systemereignis(Nachricht nachricht) {
 		this.nachricht = nachricht;
+	}
+	
+	public Systemereignis(Nachricht nachricht, UUID id){
+		this.nachricht = nachricht;
+		this.ID = id.toString();
 	}
 
 	public Nachricht getNachricht() {

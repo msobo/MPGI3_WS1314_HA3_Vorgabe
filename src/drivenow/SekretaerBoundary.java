@@ -3,7 +3,8 @@ package drivenow;
 import java.util.Date;
 
 import drivenow.Systemereignis;
-import drivenow.Systemereignis.Nachricht;
+import drivenow.controls.Ressourcenverwaltung;
+import drivenow.controls.Unterrichtsverwaltung;
 import drivenow.interfaces.ISekretaerBoundary;
 
 public class SekretaerBoundary implements ISekretaerBoundary {
@@ -13,33 +14,29 @@ public class SekretaerBoundary implements ISekretaerBoundary {
 
 	@Override
 	public Systemereignis fahrlehrerinEintragen(String name, String kennzeichen) {
-		
-		return new Systemereignis(Nachricht.Fahrlehrerin_erfolgreich_hinzugefuegt);
+		return ressourceVerwaltung.fahrlehrerin_hinzufuegen(name, kennzeichen);
 	}
 
 	@Override
 	public Systemereignis fahrschuelerEintragen(String name, String anschrift) {
-		// TODO Auto-generated method stub
-		return null;
+		unterrichtsVerwaltung.fahrschuehler_eintragen(name, anschrift);
+		return ressourceVerwaltung.fahrschuehler_eintragen(name, anschrift);
 	}
 
 	@Override
 	public Systemereignis fahrschulautoEintragen(String kennzeichen) {
-		// TODO Auto-generated method stub
 		return ressourceVerwaltung.auto_hinzufuegen(kennzeichen);
 	}
 
 	@Override
 	public Systemereignis theoriestundeEintragen(int thema, Date beginn) {
-		// TODO Auto-generated method stub
-		return null;
+		return unterrichtsVerwaltung.theoriestunde_erstellen(thema, beginn);
 	}
 
 	@Override
 	public Systemereignis fahrstundeEintragen(String schuelerID,
 			Stundenart art, Date beginn, int anzahl) {
-		// TODO Auto-generated method stub
-		return null;
+		return unterrichtsVerwaltung.fahrstunde_erstellen(schuelerID, art, beginn, anzahl);
 	}
 
 	@Override
@@ -56,8 +53,7 @@ public class SekretaerBoundary implements ISekretaerBoundary {
 
 	@Override
 	public String datenbestandZurueckgeben() {
-		// TODO Auto-generated method stub
-		return null;
+		return ressourceVerwaltung.getText() + unterrichtsVerwaltung.getText();
 	}
 
 	@Override

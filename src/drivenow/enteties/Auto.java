@@ -1,6 +1,5 @@
 package drivenow.enteties;
 
-import drivenow.Fahrlehrerindaten;
 
 public class Auto {
 	

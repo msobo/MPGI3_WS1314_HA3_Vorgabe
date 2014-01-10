@@ -2,6 +2,7 @@ package drivenow;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 import drivenow.enteties.Theoriestunde;
 
@@ -11,7 +12,7 @@ public class Theoriestunden_Collection {
 	
 	private ArrayList<Theoriestunde> theoriestunden;
 	
-	public Theoriestunde get_theoriestunde(Calendar beginn){
+	public Theoriestunde get_theoriestunde(Date beginn){
 		for(int i = 0; i<theoriestunden.size();i++){
 			if(theoriestunden.get(i).getBeginn() == beginn)
 				return theoriestunden.get(i);

@@ -1,12 +1,17 @@
 package drivenow.enteties;
 
-import java.util.Calendar;
+import java.util.Date;
 
 public class Unterricht {
 	
-	private Calendar beginn;
+	private Date beginn;
 
-	public Calendar getBeginn() {
+	public Unterricht(Date beginn) {
+		// TODO Auto-generated constructor stub
+		this.beginn = beginn;
+	}
+
+	public Date getBeginn() {
 		return this.beginn;
 	}
 

@@ -1,8 +1,7 @@
 package drivenow.enteties;
 
+import java.util.ArrayList;
 import java.util.UUID;
-
-import drivenow.Theoriestunden_Collection;
 
 public class Fahrschueler {
 
@@ -10,8 +9,31 @@ public class Fahrschueler {
 	private UUID id;
 	private String anschrift;
 	private boolean theorie_bestanden;
-	private Theoriestunden_Collection theoriestunden;
+	private ArrayList<Theoriestunde> theoriestunden;
+	private Fahrlehrerindaten fahrlehrerin;
 	
+	public String getAnschrift() {
+		return anschrift;
+	}
+
+	public void setAnschrift(String anschrift) {
+		this.anschrift = anschrift;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Fahrschueler(String name, String anschrift) {
+		this.setName(name);
+		this.id = UUID.randomUUID();
+		this.setAnschrift(anschrift);
+	}
+
 	public UUID get_ID(){
 		return this.id;
 	}
@@ -23,18 +45,30 @@ public class Fahrschueler {
 		return false;
 	}
 	
-	private int get_anzahl_grundlagen(){
-		return 0;
+	public int get_anzahl_grundlagen(){
+		int grundlagen = 0;
+		for ( Theoriestunde t : theoriestunden){
+			if ( t.getThema() < 13) grundlagen++;
+		}
+		return grundlagen;
 		
 	}
 	
-	private boolean sonderthema_besucht(int thema){
+	public boolean sonderthema_besucht(int thema){
 		return theorie_bestanden;
 		
 	}
 	
-	private void add_stunde(Theoriestunde ts){
+	public void add_stunde(Theoriestunde ts){
 		theoriestunden.add(ts);
+	}
+
+	public Fahrlehrerindaten getFahrlehrerin() {
+		return fahrlehrerin;
+	}
+
+	public void setFahrlehrerin(Fahrlehrerindaten fahrlehrerin) {
+		this.fahrlehrerin = fahrlehrerin;
 	}
 	
 }
