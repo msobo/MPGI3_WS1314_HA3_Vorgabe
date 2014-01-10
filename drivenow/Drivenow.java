@@ -5,29 +5,30 @@ import drivenow.interfaces.IFahrlehrerinBoundary;
 import drivenow.interfaces.ISekretaerBoundary;
 
 public class Drivenow implements IDrivenow{
+	
+	SekretaerBoundary sekBoundary = null;
+	FahrlehrerinBoundary fahrBoundary = null;
 
 	@Override
 	public String getGruppenNummer() {
-		// TODO Auto-generated method stub
-		return null;
+		// return group number
+		return "T04-05";
 	}
 
 	@Override
 	public IFahrlehrerinBoundary getFahrlehrerinBoundary() {
-		// TODO Auto-generated method stub
-		return null;
+		return fahrBoundary;
 	}
 
 	@Override
 	public ISekretaerBoundary getSekretaerBoundary() {
-		
-		return b;
+		return sekBoundary;
 	}
 
 	@Override
 	public void initialisieren() {
-		SekretaerBoundary b = new SekretaerBoundary();
-		
+		fahrBoundary = new FahrlehrerinBoundary();
+		sekBoundary = new SekretaerBoundary();
 	}
 
 	@Override

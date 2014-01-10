@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import drivenow.Drivenow;
 import drivenow.Systemereignis;
 import drivenow.Systemereignis.Nachricht;
 import drivenow.interfaces.IDrivenow;
@@ -15,7 +16,7 @@ public class BeispielTest {
 
 	public static void main(String[] args) {
 
-		IDrivenow driveNowSystem = null; // Hier Ihr Drivenow System
+		IDrivenow driveNowSystem = new Drivenow(); // Hier Ihr Drivenow System
 		driveNowSystem.initialisieren();
 
 		IFahrlehrerinBoundary fahrlehrerinBoundary = driveNowSystem
@@ -48,7 +49,7 @@ public class BeispielTest {
 		System.out.println();
 
 		System.out.println("1.2 Erwarte "
-				+ Nachricht.Fahrlehrerin_nicht_hinzugefügt_Auto_vergeben);
+				+ Nachricht.Fahrlehrerin_nicht_hinzugefuegt_Auto_vergeben);
 		systemereignis = sekretaerBoundary.fahrlehrerinEintragen("Daniela",
 				"B-DEF5689");
 		System.out.println("1.2 Erhalte " + systemereignis);
@@ -56,7 +57,7 @@ public class BeispielTest {
 		System.out.println();
 
 		System.out.println("1.3 Erwarte "
-				+ Nachricht.Fahrlehrerin_nicht_hinzugefügt_Auto_vergeben);
+				+ Nachricht.Fahrlehrerin_nicht_hinzugefuegt_Auto_vergeben);
 		systemereignis = sekretaerBoundary.fahrlehrerinEintragen("Daniela",
 				"B-DEF5689");
 		System.out.println("1.3 Erhalte " + systemereignis);

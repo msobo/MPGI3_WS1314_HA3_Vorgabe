@@ -1,5 +1,7 @@
 package drivenow;
 
+import java.util.UUID;
+
 
 /**
  * Klasse fuer die Systemereignisse.
@@ -18,7 +20,7 @@ public class Systemereignis {
 
 	/**
 	 * Ist das Systemereignis eine Antwort auf das Erstellen eines ID
-	 * tragenden Objektes, wird die zugewiesene ID in diesem Feld zurückgegeben.
+	 * tragenden Objektes, wird die zugewiesene ID in diesem Feld zurï¿½ckgegeben.
 	 */
 	private String ID;
 
@@ -31,6 +33,11 @@ public class Systemereignis {
 
 	public Systemereignis(Nachricht nachricht) {
 		this.nachricht = nachricht;
+	}
+	
+	public Systemereignis(Nachricht nachricht, UUID id){
+		this.nachricht = nachricht;
+		this.ID = id.toString();
 	}
 
 	public Nachricht getNachricht() {
@@ -62,10 +69,10 @@ public class Systemereignis {
 		Fahrschulauto_erfolgreich_hinzugefuegt, 
 		Auto_mit_kennzeichen_bereits_vorhanden, 
 		Fahrlehrerin_erfolgreich_hinzugefuegt, 
-		Fahrlehrerin_nicht_hinzugefügt_Auto_unbekannt, 
-		Fahrlehrerin_nicht_hinzugefügt_Auto_vergeben, 
+		Fahrlehrerin_nicht_hinzugefuegt_Auto_unbekannt, 
+		Fahrlehrerin_nicht_hinzugefuegt_Auto_vergeben, 
 		Fahrschueler_erfolgreich_hinzugefuegt, 
-		Fahrschueler_nicht_hinzugefügt_keine_Fahrlehrerin_vorhanden, 
+		Fahrschueler_nicht_hinzugefuegt_keine_Fahrlehrerin_vorhanden, 
 		Theoriestunde_erfolgreich_hinzugefuegt, 
 		Theoriestunde_nicht_hinzugefuegt_Raum_belegt, 
 		Theoriestunde_nicht_hinzugefuegt_keine_Lehrerin_verfuegbar, 

@@ -2,6 +2,9 @@ package drivenow;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+
+import drivenow.enteties.Theoriestunde;
 
 
 public class Theoriestunden_Collection {
@@ -9,7 +12,7 @@ public class Theoriestunden_Collection {
 	
 	private ArrayList<Theoriestunde> theoriestunden;
 	
-	public Theoriestunde get_theoriestunde(Calendar beginn){
+	public Theoriestunde get_theoriestunde(Date beginn){
 		for(int i = 0; i<theoriestunden.size();i++){
 			if(theoriestunden.get(i).getBeginn() == beginn)
 				return theoriestunden.get(i);
@@ -25,26 +28,16 @@ public class Theoriestunden_Collection {
 		return false;
 	}
 	
-	public int get_anzahl_grundlagenstunden(){
-		int anzahl=0;
-		for(int i = 0; i<theoriestunden.size(); i++){
-			if(theoriestunden.get(i).getThema()<13){
-				anzahl=anzahl+1;
-			}
-		}
-		return anzahl;
+	private int get_anzahl_grundlagenstunden(){
+		return 0;
 		
 	}
 	
-	public boolean finde_stunde(int thema){
-		for(int i = 0; i<theoriestunden.size(); i++){
-			if(theoriestunden.get(i).getThema()==thema){
-				return true;
-			}
-		}
-		return false;
+	private void finde_stunde(int thema){
+		
+		
 	}
 	public void add(Theoriestunde ts){
-		theoriestunden.add(ts);
+		
 	}
 }
